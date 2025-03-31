@@ -4,4 +4,3 @@
         header('Location: login.php'); // Redirection vers la page de login
         exit;
     }
-?>

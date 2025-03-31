@@ -37,7 +37,8 @@
 
     <?php
     $titre="Connectez-vous !";
-    $composant='<form action="login.php" method="post">
+    //transformer avec un ob start et get clean 
+    $contenu='<form action="login.php" method="post">
 
     <label for="utilisateur">Nom d utilisateur :</label>
     <input type="text" name="utilisateur" id="utilisateur" required>
