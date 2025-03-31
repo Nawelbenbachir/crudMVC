@@ -1,5 +1,5 @@
 <?php
-    require_once './models/modele.php'; // On inclut la connexion à la base de données
+    require_once 'models/modele.php'; // On inclut la connexion à la base de données
     getBdd(); //connexion à la bdd
     session_start(); // On démarre la session
 
@@ -35,33 +35,20 @@
 
 ?>
 
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connectez-vous !</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
     <?php
-        require_once 'composants/menu.php'; // On inclut le menu
+    $titre="Connectez-vous !";
+    $composant='<form action="login.php" method="post">
+
+    <label for="utilisateur">Nom d utilisateur :</label>
+    <input type="text" name="utilisateur" id="utilisateur" required>
+
+    <label for="mot_de_passe">Mot de passe :</label>
+    <input type="password" name="mot_de_passe" id="mot_de_passe" required>
+    
+    <button name="submit" type="submit">Se connecter</button>
+
+    </form>';
+
+        require_once 'menu.php'; // On inclut le menu
+        require_once './views/gabarit.php';
     ?>
-
-    <h1>Connectez-vous !</h1>
-
-    <form action="login.php" method="post">
-
-        <label for="utilisateur">Nom d'utilisateur :</label>
-        <input type="text" name="utilisateur" id="utilisateur" required>
-
-        <label for="mot_de_passe">Mot de passe :</label>
-        <input type="password" name="mot_de_passe" id="mot_de_passe" required>
-        
-        <button name="submit" type="submit">Se connecter</button>
-
-    </form>
-
-</body>
-</html>
