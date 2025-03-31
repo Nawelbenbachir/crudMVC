@@ -3,7 +3,7 @@
     
     <li><a href="./index.php">Accueil</a></li>
     <li><a href="./composants/etudiants.php">Etudiants</a></li>
-    <li><a href="VueCours.php">Cours</a></li>
+    <li><a href="views/VueCours.php">Cours</a></li>
     <li><a href=<?=$link?>><?=$button ?></a></li>
     
    

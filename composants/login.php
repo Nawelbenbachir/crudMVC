@@ -1,6 +1,6 @@
 <?php
-    require_once 'models/modele.php'; // On inclut la connexion à la base de données
-    getBdd(); //connexion à la bdd
+    require_once '../models/modele.php'; // On inclut la connexion à la base de données
+    $pdo=getBdd(); //connexion à la bdd
     session_start(); // On démarre la session
 
     
@@ -9,7 +9,7 @@
         //Récupère les données du formulaire
         $utilisateur = $_POST['utilisateur'];
         $mot_de_passe = $_POST['mot_de_passe'];
-
+        
         // On retrouve (ou pas) l'enregistrement correspondant dans la base de données
         //$query = $pdo->query('SELECT * FROM utilisateurs WHERE email = ' . $utilisateur); // Excessivement dangereux
         $requete = $pdo->prepare('SELECT * FROM personnes WHERE email = :utilisateur');
@@ -50,5 +50,5 @@
     </form>';
 
         require_once 'menu.php'; // On inclut le menu
-        require_once './views/gabarit.php';
+        require_once '../views/gabarit.php';
     ?>
